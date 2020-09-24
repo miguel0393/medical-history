@@ -7,7 +7,7 @@ import reactor.core.publisher.Mono;
 @RestController
 public class MedicalHistoryController {
 
-    @GetMapping("/values")
+    @GetMapping("/getValues")
     public Mono<String> getValues() {
         return Mono.just("OK");
     }
