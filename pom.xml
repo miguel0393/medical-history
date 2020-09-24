@@ -61,7 +61,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <finalName>medical-history</finalName>
+<!--        <finalName>medical-history</finalName>-->
     </build>
 
 </project>
