@@ -29,13 +29,13 @@ phases:
     #commands:
       # - command
       # - command
-  #pre_build:
-    #commands:
+  pre_build:
+    commands:
+      - mvn clean
       # - command
       # - command
   build:
     commands:
-      - mvn clean
       - mvn compile
       - mvn test
       # - command
