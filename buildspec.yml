@@ -42,7 +42,7 @@ phases:
   post_build:
     commands:
       - mvn package
-      - mv target/medical-history-0.0.1-SNAPSHOT ROOT.war
+      - mv target/medical-history-0.0.1-SNAPSHOT.war ROOT.war
       # - command
 #reports:
   #report-name-or-arn:
