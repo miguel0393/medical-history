@@ -12,9 +12,9 @@ public class MedicalHistoryController {
 
     private final MedicalHistoryService medicalHistoryService;
 
-    @GetMapping("/getValues")
-    public Mono<String> getValues() {
-        return Mono.just("OK");
+    @GetMapping("/")
+    public Mono<String> getHealthCheck() {
+        return Mono.just("Ok, service is working");
     }
 
     @GetMapping(value = "/getMedicalHistory/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
