@@ -10,7 +10,7 @@ public class MedicalHistoryRestAdapter implements MedicalHistoryRepository {
 
     @Override
     public Mono<MedicalHistory> getMedicalHistoryById(String id) {
-        return Mono.just(new MedicalHistory("1", "1", "1"));
+        return Mono.just(new MedicalHistory("1", "1", "1", "1"));
 
         //        return WebClient.create()
 //                .get()
@@ -22,7 +22,7 @@ public class MedicalHistoryRestAdapter implements MedicalHistoryRepository {
 
     @Override
     public Flux<MedicalHistory> getAllMedicalHistory() {
-        return Flux.just(new MedicalHistory("1", "1", "1"));
+        return Flux.just(new MedicalHistory("1", "1", "1", "1"));
 //        return WebClient.create()
 //                .get()
 //                .uri("url")

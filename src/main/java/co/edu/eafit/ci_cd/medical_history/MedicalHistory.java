@@ -15,9 +15,13 @@ public class MedicalHistory implements Serializable {
     @JsonProperty("clientId")
     private String clientId;
 
-    public MedicalHistory(String id, String clientName, String clientId) {
+    @JsonProperty("symptoms")
+    private String symptoms;
+
+    public MedicalHistory(String id, String clientName, String clientId, String symptoms) {
         this.id = id;
         this.clientName = clientName;
         this.clientId = clientId;
+        this.symptoms = symptoms;
     }
 }
