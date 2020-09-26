@@ -1,25 +1,27 @@
 package co.edu.eafit.ci_cd.medical_history.aspects;
 
+import lombok.extern.java.Log;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
+import java.util.logging.Level;
+
+@Log
 @Aspect
 @Component
 public class MedicalHistoryLogAspect {
 
-    @Before(value = "execution(* co.edu.eafit.ci_cd.medical_history.MedicalHistoryController.getValues())")
+    @Before(value = "execution(* co.edu.eafit.ci_cd.medical_history.infrastructure.receivers.MedicalHistoryController.getMedical*())")
     public void beforeAdvice(JoinPoint joinPoint) {
-        System.out.println("hola");
+        log.log(Level.INFO, "Before method: {0}", joinPoint.getSignature());
 
-//        System.out.println("Before method:" + joinPoint.getSignature());
-//
-//        System.out.println("Creating Employee with name - " + name + " and id - " + empId);
+        log.log(Level.INFO, "Getting Medical History: {0}", joinPoint.getSignature());
     }
 
-    @After(value = "execution(* co.edu.eafit.ci_cd.medical_history.MedicalHistoryController.getMedicalHistory(..)) " +
+    @After(value = "execution(* co.edu.eafit.ci_cd.medical_history.infrastructure.receivers.MedicalHistoryController.getMedicalHistory(..)) " +
             "and args(id)")
     public void afterAdvice(JoinPoint joinPoint, String id) {
         System.out.println("After method:" + joinPoint.getSignature());
@@ -30,11 +32,5 @@ public class MedicalHistoryLogAspect {
             System.out.println("OK");
         }
     }
-//
-//    @After(value = "execution(* com.javainuse.service.EmployeeService.*(..)) and args(name,empId)")
-//    public void afterAdvice(JoinPoint joinPoint, String name, String empId) {
-//        System.out.println("After method:" + joinPoint.getSignature());
-//
-//        System.out.println("Successfully created Employee with name - " + name + " and id - " + empId);
-//    }
+
 }
