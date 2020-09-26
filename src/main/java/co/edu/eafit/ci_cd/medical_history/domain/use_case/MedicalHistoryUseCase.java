@@ -18,4 +18,8 @@ public class MedicalHistoryUseCase {
     public Flux<MedicalHistory> getAllMedicalHistory() {
         return medicalHistoryRepository.getAllMedicalHistory();
     }
+
+    public Mono<String> saveMedicalHistory(MedicalHistory medicalHistory) {
+        return medicalHistoryRepository.saveMedicalHistoryById(medicalHistory);
+    }
 }

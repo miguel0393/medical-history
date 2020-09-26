@@ -4,10 +4,9 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Builder
+@Builder(toBuilder = true)
 public class MedicalHistory {
 
-    private final String medicalHistoryId;
     private final String patientName;
     private final String patientId;
     private final String symptoms;
