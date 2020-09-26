@@ -6,5 +6,8 @@ import reactor.core.publisher.Mono;
 public interface MedicalHistoryRepository {
 
     Mono<MedicalHistory> getMedicalHistoryById(String id);
+
     Flux<MedicalHistory> getAllMedicalHistory();
+
+    Mono<String> saveMedicalHistoryById(MedicalHistory medicalHistory);
 }
