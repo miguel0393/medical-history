@@ -14,7 +14,7 @@ import java.util.logging.Level;
 @Component
 public class MedicalHistoryLogAspect {
 
-    @Before(value = "execution(* co.edu.eafit.ci_cd.medical_history.infrastructure.receivers.MedicalHistoryController.getMedical*())")
+    @Before(value = "execution(* co.edu.eafit.ci_cd.medical_history.infrastructure.receivers.MedicalHistoryController.get*())")
     public void beforeAdvice(JoinPoint joinPoint) {
         log.log(Level.INFO, "Before method: {0}", joinPoint.getSignature());
 
