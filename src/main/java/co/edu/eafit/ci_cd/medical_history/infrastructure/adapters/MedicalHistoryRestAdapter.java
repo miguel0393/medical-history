@@ -29,29 +29,12 @@ public class MedicalHistoryRestAdapter implements MedicalHistoryRepository {
     }
 
     @Override
-    public Flux<MedicalHistory> getAllMedicalHistory() {
-        return Flux.just(MedicalHistory.builder()
-                        .patientId("1")
-                        .patientName("1")
-                        .symptoms("1")
-                        .diagnosis("1")
-                        .prognosis("1")
-                        .treatment("1")
-                        .build(),
-                MedicalHistory.builder()
-                        .patientId("2")
-                        .patientName("2")
-                        .symptoms("2")
-                        .diagnosis("2")
-                        .prognosis("2")
-                        .treatment("2")
-                        .build());
-//        return WebClient.create()
-//                .get()
-//                .uri("url")
-//                .retrieve()
-//                .bodyToFlux(String.class)
-//                .map(x -> new MedicalHistory("1", "1", "1"));
+    public Flux<String> getAllMedicalHistory() {
+        return WebClient.create()
+                .get()
+                .uri("http://blockchainapi-env.eba-j7kjrmhb.us-east-2.elasticbeanstalk.com/bc/blockchain")
+                .retrieve()
+                .bodyToFlux(String.class);
     }
 
     @Override
