@@ -27,7 +27,7 @@ public class MedicalHistoryController {
     }
 
     @GetMapping(value = "/getMedicalHistory", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Flux<MedicalHistory> getMedicalHistory() {
+    public Flux<String> getMedicalHistory() {
         return medicalHistoryUseCase.getAllMedicalHistory();
     }
 

@@ -15,7 +15,7 @@ public class MedicalHistoryUseCase {
         return medicalHistoryRepository.getMedicalHistoryById(id);
     }
 
-    public Flux<MedicalHistory> getAllMedicalHistory() {
+    public Flux<String> getAllMedicalHistory() {
         return medicalHistoryRepository.getAllMedicalHistory();
     }
 

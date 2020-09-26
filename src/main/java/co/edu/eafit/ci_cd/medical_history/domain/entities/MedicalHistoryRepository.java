@@ -7,7 +7,7 @@ public interface MedicalHistoryRepository {
 
     Mono<MedicalHistory> getMedicalHistoryById(String id);
 
-    Flux<MedicalHistory> getAllMedicalHistory();
+    Flux<String> getAllMedicalHistory();
 
     Mono<String> saveMedicalHistoryById(MedicalHistory medicalHistory);
 }
